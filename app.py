@@ -1,4 +1,5 @@
 import streamlit as st
+import bz2
 import pickle
 import pandas as pd
 import requests
@@ -8,15 +9,15 @@ import os
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 movies_path = os.path.join(BASE_DIR, 'movies_dict.pkl')
-similarity_path = os.path.join(BASE_DIR, 'similarity.pkl')
+similarity_path = os.path.join(BASE_DIR, 'similarity.pkl.bz2')
 
 movies_dict = pickle.load(open(movies_path, 'rb'))
 movies = pd.DataFrame(movies_dict)
 
-similarity = pickle.load(open(similarity_path, 'rb'))
+similarity = pickle.load(bz2.BZ2File(similarity_path, 'rb'))
 
 
-# --------- Fetch Poster Function ----------
+# --------- Fetch Poster Function -z---------
 def fetch_poster(movie_id):
     url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key=78c2d206317ae1aca6c2dbcb25272a35&language=en-US"
     response = requests.get(url)
