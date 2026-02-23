@@ -1,7 +1,5 @@
 # 🎬 CineMatrix: Movie Recommender System
 
-![CineMatrix Cover Image](https://via.placeholder.com/800x400?text=CineMatrix+Movie+Recommender)
-
 CineMatrix is a Machine Learning-powered movie recommendation system designed to help users discover films tailored to their specific tastes. By leveraging detailed metadata from thousands of movies, including genres, cast, crew, and keywords, the system utilizes content-based filtering to provide highly accurate suggestions.
 
 ---
